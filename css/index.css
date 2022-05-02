@@ -1,0 +1,382 @@
+@charset "utf-8";
+
+*{box-sizing: border-box; font-family: 'Noto Serif KR', serif;}
+
+.hidden{display: none;}
+
+div{display: block;}
+
+/* mo header*/
+header {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    background: #8988FF;
+}
+header h1{
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    z-index: 2;
+    transform: rotate(90deg);
+    transform-origin: 0% 100%;
+    color: #fff;
+}
+/* mo nav  */
+header nav{
+    float: right;
+}
+header nav li{
+    font-size: 18px;
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+    color: #8988FF;
+    
+}
+
+/* menu-toggle-btn */
+.menu-toggle-btn{
+    width: 90px;
+    height: 70px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0; /*-320px 오른쪽 변경지점 right*/
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    padding-top: 20px;
+    background-color: #D5D5FF;
+}
+
+/* toggle btn js */
+.menu-toggle-btn.active{
+    right: 320px; /*-320px 오른쪽 변경지점 right*/
+}
+
+.menu-toggle-btn > div{
+    width: 33px;
+    height: 3px;
+    border-radius: 2px;
+    background: #8988FF;
+    margin: 5px 28px;
+}
+
+/* 햄버거 버튼 x모양으로 변경 */
+.menu-toggle-btn.active #one{
+    transform: translateY(7px) rotate(-135deg);
+    transition: all 0.6s ease-in-out;
+}
+.menu-toggle-btn.active #two{
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+}
+.menu-toggle-btn.active #three{
+    transform: translateY(-9px) rotate(-45deg);
+    transition: all 0.6s ease-in-out;
+}
+/* GNB-MO */
+.gnb{
+    position: fixed;
+    width: 320px;
+    height: 100%;
+    top: 0;
+    right: -320px; /*-320px 오른쪽 변경지점 right*/
+    background: #DEDBF8;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+}
+.gnb.show{
+    right: 0;
+}
+
+/* mo-section main */
+.main{
+    width: 100%;
+    height: 100%;
+    background: #8988FF;
+    position: relative;
+}
+.inner{
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.intro_text{
+    width: 100%;
+    height: 800px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.intro_text p{
+    color: #fff;
+    font-size: 20px;
+}
+.field{
+    width: 100%;
+    height: 800px;
+    text-align: center;
+}
+.main .field .mouse{
+    width: 25px;
+    height: 50px;
+    border: 2px solid #D5D5FF;
+    border-radius: 60px;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+}
+
+/* 애니메이션 */
+.main .field .mouse::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    opacity: 1;
+    animation-name: mouse_ani;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+}
+@keyframes mouse_ani {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: 20px;
+    }
+}
+
+.main .field  p.scroll{
+    color: #fff;
+    text-align: center;
+    margin-top: -430px;
+    margin-left: 25px;
+    
+}
+
+
+/* SKILLS */
+.SKILLS{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.SKILLS .logo1{
+    font-size: 25px;
+    position: absolute;
+    top: 50px;
+    left: -25px;
+    transform: rotate(90deg);
+    color: #8988FF;
+}
+.SKILLS .my{
+    display: block;
+    text-align: center;
+    margin: 40px;
+}
+.SKILLS .text_box{
+    text-align: center;
+}
+
+.SKILLS .text1{
+    font-size: 23px;
+    color: #8988FF;
+    font-weight: 700;
+    margin: 15px;
+}
+.SKILLS .text2{
+    margin: 0 auto;
+    margin: 10px;
+}
+.SKILLS .text2,.SKILLS .text4{
+    font-weight: bold;
+    
+}
+.SKILLS .text3{
+    font-size: 23px;
+    color: #8988FF;
+    font-weight: bold;
+}
+
+/* Project img*/
+.Project{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.Project .logo2{
+    font-size: 25px;
+    position: absolute;
+    top: 50px;
+    left: -25px;
+    transform: rotate(90deg);
+    color: #8988FF;
+}
+
+.Project .pj_apple{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+.Project .btn_box1,.btn_box2{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+/* project text */
+.Project span{
+    font-size: 30px;
+    color: #8988FF;
+    font-weight: bold;
+    text-align: center;
+}
+.Project p{
+    font-weight: 600;
+    text-align: center;
+    
+}
+.btn_box{
+    padding: 20px;
+}
+/* BUTTON */
+.btn{
+    width: 130px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    transition: all 0.4s;
+    box-sizing: border-box;
+
+}
+.btn:hover{
+    background-color: #8988FF;
+    color: #fff;
+}
+.Project .btn_box{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* About */
+.About{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.About .logo3{
+    font-size: 25px;
+    position: absolute;
+    top: 0px;
+    left: -18px;
+    transform: rotate(90deg);
+    color: #8988FF;
+}
+.About img{
+    margin-bottom: 40px;
+}
+.About .ab-1{
+    padding: 0px;
+    text-align: center;
+}
+.About .ab-1 .ab-text1{
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.About .ab-2{
+    text-align: center;
+    font-weight: 700;
+}
+.git_btn{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+
+}
+.git_btn .btn1{
+    padding: 20px;
+}
+@media all and (min-width : 768px){
+    /* body{background: mediumaquamarine;} */
+    /* tab-skills */
+    .SKILLS_textbox{
+        display: flex;
+        justify-content: center;
+    }
+    .SKILLS{
+        width: 100%;
+        height: 100%;
+    }
+    .SKILLS .my{
+        padding: 30px;
+        display: block;        
+    }
+    .SKILLS .text_box{
+        margin-top: 100px;
+    }
+    /* tab-project */
+
+}
+@media all and (min-width : 1920px){
+    /* body{background: coral;} */
+    /* skills */
+    .SKILLS{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .SKILLS .my, .SKILLS_textbox{
+        display: flex;
+        justify-content: center;
+    }
+    .SKILLS .my{
+        display: block;
+    }
+    .SKILLS .text_box{
+        margin-top: 100px;
+    }
+    .Project .pj_box{
+        display: flex;
+        justify-content: center;
+
+    }
+    .Project .pj_box .pj_text{
+        margin-top: 80px;
+    } 
+
+    /*  Project btn_box*/
+    .Project{
+        position: relative;
+    }
+    .Project .btn_box1{
+        position: absolute;
+        top: 35%;
+        right: 32%;
+    }
+    .Project .btn_box2{
+        position: absolute;
+        bottom: 10px;
+        right: 33%;
+    }
+    /* about */
+    .About .ab_textbox{
+        display: flex;
+        justify-content: center;
+    }
+}
